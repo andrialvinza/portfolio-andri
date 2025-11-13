@@ -166,8 +166,19 @@
   </footer>
 
   <script>
-    // Auto isi tahun di footer
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  // Auto isi tahun di footer
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Navbar efek saat discroll
+  const navbar = document.querySelector(".navbar");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 12) {
+      navbar.classList.add("navbar--scrolled");
+    } else {
+      navbar.classList.remove("navbar--scrolled");
+    }
+  });
+</script>
 </body>
 </html>
