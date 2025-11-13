@@ -271,25 +271,28 @@ body::after {
 
 .todo-clear-done,
 .todo-clear-all {
-  border: none;
-  background: transparent;
-  font-size: 0.8rem;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
   cursor: pointer;
-  text-decoration: underline;
-  text-decoration-style: dotted;
-}
-
-.todo-clear-done {
-  color: #f97373;
+  background: rgba(239, 68, 68, 0.08);
+  color: #fca5a5;
+  transition: 0.15s ease;
+  backdrop-filter: blur(6px);
 }
 
 .todo-clear-all {
-  color: #fb7185;
+  border-color: rgba(244, 63, 94, 0.35);
+  background: rgba(244, 63, 94, 0.08);
+  color: #fda4af;
 }
 
 .todo-clear-done:hover,
 .todo-clear-all:hover {
-  opacity: 0.9;
+  background: rgba(244, 63, 94, 0.16);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(244, 63, 94, 0.35);
 }
 
 /* LIST */
