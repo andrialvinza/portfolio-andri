@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-do List | Andri</title>
+  <link rel="stylesheet" href="todo.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="app-header">
+      <a href="/" class="back-link">← Kembali ke Portofolio</a>
+      <div>
+        <p class="app-kicker">Mini Project • Web App</p>
+        <h1>To-do List Andri</h1>
+        <p class="app-subtitle">
+          Catat tugas harian, tandai yang sudah selesai, dan jaga produktivitas tetap on-track. 
+          Semua data tersimpan di browser kamu.
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <section class="todo-card">
+        <header class="todo-header">
+          <h2>Daftar Tugas</h2>
+          <p class="todo-counter">
+            <span class="todo-count">0</span> tugas tersisa
+          </p>
+        </header>
+
+        <form class="todo-form">
+          <input
+            type="text"
+            class="todo-input"
+            placeholder="Tulis tugasmu di sini lalu tekan Enter..."
+            autocomplete="off"
+          />
+          <button type="submit" class="btn-add">Tambah</button>
+        </form>
+
+        <div class="todo-toolbar">
+          <div class="filters">
+            <button type="button" class="filter-btn is-active" data-filter="all">Semua</button>
+            <button type="button" class="filter-btn" data-filter="active">Aktif</button>
+            <button type="button" class="filter-btn" data-filter="done">Selesai</button>
+          </div>
+          <button type="button" class="todo-clear">Hapus yang selesai</button>
+        </div>
+
+        <ul class="todo-list">
+          <!-- item akan di-render via JS -->
+        </ul>
+      </section>
+
+      <p class="small-note">
+        💡 Tip: To-do List ini disimpan di <strong>localStorage</strong>, jadi tidak hilang walaupun halaman di-refresh
+        (selama kamu pakai browser & device yang sama).
+      </p>
+    </main>
+  </div>
+
+  <script>
+    const form = document.querySelector(".todo-form");
+    const input = document.querySelector(".todo-input");
+    const listEl = document.querySelector(".todo-list");
+    const countEl = document.querySelector(".todo-count");
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const clearBtn = document.querySelector(".todo-clear");
+
+    let todos = [];
+    let currentFilter = "all";
+
+    // ----- LocalStorage -----
+    function loadTodos() {
+      const raw = localStorage.getItem("andri-todos");
+      if (!raw) return;
+      try {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed)) {
+          todos = parsed;
+        }
+      } catch (e) {
+        console.error("Gagal parse todos:", e);
+      }
+    }
+
+    function saveTodos() {
+      localStorage.setItem("andri-todos", JSON.stringify(todos));
+    }
+
+    // ----- Render -----
+    function getFilteredTodos() {
+      if (currentFilter === "active") {
+        return todos.filter((t) => !t.done);
+      }
+      if (currentFilter === "done") {
+        return todos.filter((t) => t.done);
+      }
+      return todos;
+    }
+
+    function render() {
+      const filtered = getFilteredTodos();
+      listEl.innerHTML = "";
+
+      if (filtered.length === 0) {
+        const empty = document.createElement("li");
+        empty.className = "todo-empty";
+        empty.textContent = "Belum ada tugas. Tambah satu di atas ✍️";
+        listEl.appendChild(empty);
+      } else {
+        for (const todo of filtered) {
+          const li = document.createElement("li");
+          li.className = "todo-item";
+          if (todo.done) li.classList.add("is-done");
+          li.dataset.id = todo.id;
+
+          li.innerHTML = `
+            <label class="todo-main">
+              <input type="checkbox" class="todo-checkbox" ${todo.done ? "checked" : ""} />
+              <span class="todo-text">${todo.text}</span>
+            </label>
+            <button type="button" class="todo-delete">✕</button>
+          `;
+
+          listEl.appendChild(li);
+        }
+      }
+
+      const remaining = todos.filter((t) => !t.done).length;
+      countEl.textContent = remaining;
+    }
+
+    // ----- Event: tambah todo -----
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const value = input.value.trim();
+      if (!value) return;
+
+      todos.push({
+        id: Date.now().toString(),
+        text: value,
+        done: false,
+      });
+
+      input.value = "";
+      saveTodos();
+      render();
+    });
+
+    // ----- Event: checkbox & delete -----
+    listEl.addEventListener("click", (e) => {
+      const li = e.target.closest(".todo-item");
+      if (!li) return;
+      const id = li.dataset.id;
+
+      if (e.target.matches(".todo-checkbox")) {
+        const todo = todos.find((t) => t.id === id);
+        if (!todo) return;
+        todo.done = e.target.checked;
+        saveTodos();
+        render();
+      }
+
+      if (e.target.matches(".todo-delete")) {
+        todos = todos.filter((t) => t.id !== id);
+        saveTodos();
+        render();
+      }
+    });
+
+    // ----- Filter buttons -----
+    filterButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        filterButtons.forEach((b) => b.classList.remove("is-active"));
+        btn.classList.add("is-active");
+        currentFilter = btn.dataset.filter;
+        render();
+      });
+    });
+
+    // ----- Clear completed -----
+    clearBtn.addEventListener("click", () => {
+      todos = todos.filter((t) => !t.done);
+      saveTodos();
+      render();
+    });
+
+    // ----- Init -----
+    loadTodos();
+    render();
+  </script>
+</body>
+</html>
