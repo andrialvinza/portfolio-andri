@@ -43,5 +43,4 @@ Dibuat untuk membantu fresh graduate maupun job seeker agar tetap rapi, terorgan
 
 ## 🚀 Live Demo
 
-🔗 **Live Demo:**  
-_(isi setelah deploy, contoh)_
+🔗 https://job-tracker-zeta-hazel.vercel.app/
