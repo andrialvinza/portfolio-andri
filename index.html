@@ -1,189 +1,229 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portofolio Andri</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header class="navbar">
-    <div class="logo">Andri<span>Dev</span></div>
-    <nav>
-      <a href="#about">Tentang</a>
-      <a href="#projects">Project</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Kontak</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio Andri</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">Andri<span>Dev</span></div>
+      <nav>
+        <a href="#about">Tentang</a>
+        <a href="#projects">Project</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Kontak</a>
+      </nav>
+    </header>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-text">
-        <p class="tagline">Fresh Graduate • Information Systems</p>
-       <h1>Hi, saya <span>Andri</span> 👋</h1>
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-text">
+          <p class="tagline">Fresh Graduate • Information Systems</p>
+          <h1>Hi, saya <span>Andri</span> 👋</h1>
 
-        <p class="hero-desc">
-          Saya tertarik di dunia web development dan suka membangun website
-          yang simple, bersih, dan fungsional. Sedang fokus bikin portofolio
-          dan mengembangkan skill front-end.
+          <p class="hero-desc">
+            Saya tertarik di dunia web development dan suka membangun website
+            yang simple, bersih, dan fungsional. Sedang fokus bikin portofolio
+            dan mengembangkan skill front-end.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn primary">Lihat Project</a>
+            <a href="#contact" class="btn outline">Hubungi Saya</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <p class="hero-label">Status</p>
+          <h2>Siap Kerja 🔥</h2>
+          <ul>
+            <li>💼 Tertarik posisi: Front-end / Web Dev</li>
+            <li>📍 Berdomisili di Medan</li>
+            <li>📧 Email: andriyantositepu3@gmail.com</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="section">
+        <h2>Tentang Saya</h2>
+        <p>
+          Saya lulusan Sistem Informasi yang pernah membuat program
+          pengelompokan & prediksi korban bullying sebagai tugas akhir. Terbiasa
+          bekerja dengan data, logika, dan membuat solusi berbasis web.
         </p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn primary">Lihat Project</a>
-          <a href="#contact" class="btn outline">Hubungi Saya</a>
+        <p>
+          Aktif berorganisasi saat kuliah, pernah terlibat di kegiatan IMKA, dan
+          terbiasa menyusun administrasi sederhana. Saat ini saya fokus belajar
+          HTML, CSS, dan JavaScript untuk membangun karier di dunia IT.
+        </p>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="section">
+        <div class="section-badge">Selected Works</div>
+        <h2>Project</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Project 1 | Job Application Tracker</h3>
+            <p>
+              Web app untuk mencatat dan memantau proses lamaran kerja. Ada
+              fitur CRUD, search, filter status, dark/light mode, dan
+              export/import JSON.
+            </p>
+
+            <ul class="pill-list">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>LocalStorage</li>
+            </ul>
+
+            <div class="project-links">
+              <a
+                href="https://job-tracker-zeta-hazel.vercel.app/"
+                target="_blank"
+                class="project-btn"
+              >
+                Live Demo
+              </a>
+
+              <a
+                href="projects/job-tracker/index.html"
+                target="_blank"
+                class="project-btn"
+              >
+                Local
+              </a>
+
+              <a
+                href="https://github.com/andrialvinza/portfolio-andri/tree/main/projects/job-tracker"
+                target="_blank"
+                class="project-btn"
+              >
+                GitHub
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Project 2 – To-do List Web App</h3>
+            <p>
+              Aplikasi to-do list untuk mengatur tugas harian, dengan fitur
+              tambah, hapus, dan centang tugas selesai.
+            </p>
+            <ul class="pill-list">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+            <div class="project-links">
+              <a href="/todo.html" target="_blank" class="project-btn"
+                >Live Demo</a
+              >
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Project 3 – Landing Page Portofolio</h3>
+            <p>
+              Website portofolio ini sendiri: simple, responsif, dan siap
+              di-deploy ke Vercel.
+            </p>
+            <ul class="pill-list">
+              <li>Responsive Layout</li>
+              <li>Clean Design</li>
+            </ul>
+          </article>
         </div>
-      </div>
-      <div class="hero-card">
-        <p class="hero-label">Status</p>
-        <h2>Siap Kerja 🔥</h2>
-        <ul>
-          <li>💼 Tertarik posisi: Front-end / Web Dev</li>
-          <li>📍 Berdomisili di Medan</li>
-          <li>📧 Email: andriyantositepu3@gmail.com</li>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="section">
+        <h2>Skills</h2>
+        <div class="grid skills-grid">
+          <div class="card">
+            <h3>Hard Skills</h3>
+            <ul>
+              <li>HTML & CSS dasar</li>
+              <li>JavaScript dasar</li>
+              <li>Pengolahan data sederhana</li>
+              <li>Microsoft Office (Word, Excel)</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Soft Skills</h3>
+            <ul>
+              <li>Komunikatif & mau belajar</li>
+              <li>Mampu bekerja dalam tim</li>
+              <li>Teliti dalam mengerjakan tugas</li>
+              <li>Mudah beradaptasi dengan hal baru</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section">
+        <h2>Kontak</h2>
+        <p>
+          Tertarik bekerja sama atau ingin tahu lebih lanjut tentang saya?
+          Silakan hubungi melalui:
+        </p>
+        <ul class="contact-list">
+          <li>
+            📧 Email:
+            <a href="mailto:andriyantositepu3@gmail.com">
+              andriyantositepu3@gmail.com
+            </a>
+          </li>
+
+          <li>
+            💼 LinkedIn:
+            <a
+              href="https://www.linkedin.com/in/username"
+              target="_blank"
+              rel="noopener"
+            >
+              linkedin.com/in/username
+            </a>
+          </li>
+
+          <li>
+            🐙 GitHub:
+            <a
+              href="https://github.com/andrialvinza"
+              target="_blank"
+              rel="noopener"
+            >
+              github.com/andrialvinza
+            </a>
+          </li>
         </ul>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <!-- ABOUT -->
-    <section id="about" class="section">
-      <h2>Tentang Saya</h2>
+    <footer class="footer">
       <p>
-        Saya lulusan Sistem Informasi yang pernah membuat program
-        pengelompokan & prediksi korban bullying sebagai tugas akhir.
-        Terbiasa bekerja dengan data, logika, dan membuat solusi berbasis web.
+        © <span id="year"></span> Andri. Dibuat dengan rasa penasaran & kopi.
       </p>
-      <p>
-        Aktif berorganisasi saat kuliah, pernah terlibat di kegiatan IMKA,
-        dan terbiasa menyusun administrasi sederhana. Saat ini saya fokus
-        belajar HTML, CSS, dan JavaScript untuk membangun karier di dunia IT.
-      </p>
-    </section>
+    </footer>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section">
-      <div class="section-badge">Selected Works</div>
-      <h2>Project</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Project 1 – Sistem Prediksi Bullying</h3>
-          <p>
-            Aplikasi sederhana untuk mengelompokkan dan memprediksi potensi
-            korban bullying berdasarkan beberapa variabel input.
-          </p>
-          <ul class="pill-list">
-            <li>Python (contoh)</li>
-            <li>HTML</li>
-            <li>Data Processing</li>
-          </ul>
-        </article>
+    <script>
+      // Auto isi tahun di footer
+      document.getElementById("year").textContent = new Date().getFullYear();
 
-        <article class="card">
-          <h3>Project 2 – To-do List Web App</h3>
-          <p>
-            Aplikasi to-do list untuk mengatur tugas harian, dengan fitur
-            tambah, hapus, dan centang tugas selesai.
-          </p>
-          <ul class="pill-list">
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-          </ul>
-           <div class="project-links">
-  <a href="/todo.html" target="_blank" class="project-btn">Live Demo</a>
-</div> 
-        </article>
+      // Navbar efek saat discroll
+      const navbar = document.querySelector(".navbar");
 
-        <article class="card">
-          <h3>Project 3 – Landing Page Portofolio</h3>
-          <p>
-            Website portofolio ini sendiri: simple, responsif, dan siap
-            di-deploy ke Vercel.
-          </p>
-          <ul class="pill-list">
-            <li>Responsive Layout</li>
-            <li>Clean Design</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="section">
-      <h2>Skills</h2>
-      <div class="grid skills-grid">
-        <div class="card">
-          <h3>Hard Skills</h3>
-          <ul>
-            <li>HTML & CSS dasar</li>
-            <li>JavaScript dasar</li>
-            <li>Pengolahan data sederhana</li>
-            <li>Microsoft Office (Word, Excel)</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Soft Skills</h3>
-          <ul>
-            <li>Komunikatif & mau belajar</li>
-            <li>Mampu bekerja dalam tim</li>
-            <li>Teliti dalam mengerjakan tugas</li>
-            <li>Mudah beradaptasi dengan hal baru</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <h2>Kontak</h2>
-      <p>
-        Tertarik bekerja sama atau ingin tahu lebih lanjut tentang saya?
-        Silakan hubungi melalui:
-      </p>
-      <ul class="contact-list">
-  <li>
-    📧 Email:
-    <a href="mailto:andriyantositepu3@gmail.com">
-      andriyantositepu3@gmail.com
-    </a>
-  </li>
-
-  <li>
-    💼 LinkedIn:
-    <a href="https://www.linkedin.com/in/username" target="_blank" rel="noopener">
-      linkedin.com/in/username
-    </a>
-  </li>
-
-  <li>
-    🐙 GitHub:
-    <a href="https://github.com/andrialvinza" target="_blank" rel="noopener">
-      github.com/andrialvinza
-    </a>
-  </li>
-</ul>
-
-    </section>
-  </main>
-
-  <footer class="footer">
-    <p>© <span id="year"></span> Andri. Dibuat dengan rasa penasaran & kopi.</p>
-  </footer>
-
-  <script>
-  // Auto isi tahun di footer
-  document.getElementById("year").textContent = new Date().getFullYear();
-
-  // Navbar efek saat discroll
-  const navbar = document.querySelector(".navbar");
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 12) {
-      navbar.classList.add("navbar--scrolled");
-    } else {
-      navbar.classList.remove("navbar--scrolled");
-    }
-  });
-</script>
-</body>
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 12) {
+          navbar.classList.add("navbar--scrolled");
+        } else {
+          navbar.classList.remove("navbar--scrolled");
+        }
+      });
+    </script>
+  </body>
 </html>
