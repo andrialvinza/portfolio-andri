@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom style dikit biar scrollbarnya cantik (opsional) */
+body {
+  background-color: #f9fafb;
+}
