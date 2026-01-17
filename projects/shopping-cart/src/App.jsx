@@ -96,7 +96,7 @@ const App = () => {
         return prevCart.map((item) =>
           item.id === product.id
             ? { ...item, quantity: item.quantity + 1 }
-            : item
+            : item,
         );
       }
       return [...prevCart, { ...product, quantity: 1 }];
@@ -136,7 +136,7 @@ const App = () => {
   // Hitung total harga
   const totalPrice = cart.reduce(
     (total, item) => total + item.price * item.quantity,
-    0
+    0,
   );
 
   // Hitung total item untuk badge
@@ -336,12 +336,22 @@ const App = () => {
                       Ongkir dan pajak dihitung saat checkout.
                     </p>
                     <div className="mt-6">
-                      <a
-                        href="#"
-                        className="flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
+                      {/* === BAGIAN YANG DIUBAH (CHECKOUT BUTTON) === */}
+                      <button
+                        onClick={() => {
+                          alert(
+                            `Terima kasih sudah berbelanja! Total: ${formatRupiah(
+                              totalPrice,
+                            )} \n(Ini hanya simulasi demo)`,
+                          );
+                          clearCart(); // Kosongkan keranjang
+                          setIsCartOpen(false); // Tutup sidebar
+                        }}
+                        className="w-full flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
                       >
                         Checkout
-                      </a>
+                      </button>
+                      {/* ============================================= */}
                     </div>
                   </div>
                 )}
