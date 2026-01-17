@@ -1,15 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Job Application Tracker | Andri</title>
 
-    <!-- nanti kita isi style.css -->
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
   </head>
   <body>
-    <!-- HEADER -->
     <header class="app-header">
       <div class="header-left">
         <h1 class="app-title">Job Application Tracker</h1>
@@ -43,9 +42,7 @@
     </header>
 
     <main class="container">
-      <!-- TOP SECTION: STATS + FORM -->
       <section class="grid-top">
-        <!-- STATS -->
         <section class="stats" aria-label="Stats">
           <h2 class="section-title">Stats</h2>
 
@@ -72,7 +69,6 @@
           </div>
         </section>
 
-        <!-- FORM -->
         <section class="form-wrap" aria-label="Add application form">
           <h2 class="section-title">Add Application</h2>
 
@@ -148,7 +144,6 @@
         </section>
       </section>
 
-      <!-- TOOLBAR -->
       <section class="toolbar" aria-label="Search and filter">
         <div class="field">
           <label for="search" class="sr-only">Search</label>
@@ -171,48 +166,42 @@
         </div>
       </section>
 
-      <!-- LIST -->
       <section class="list-wrap" aria-label="Applications list">
         <div class="list-header">
           <h2 class="section-title">Applications</h2>
           <p class="muted" id="listCount">0 items</p>
         </div>
 
-        <div class="list" id="appsList">
-          <!-- contoh card (nanti JS generate) -->
-          <!--
-        <article class="app-card">
-          <div class="app-main">
-            <div>
-              <h3 class="app-company">PT Contoh</h3>
-              <p class="app-position">Front End Developer</p>
-              <p class="app-meta">Applied: 2025-12-12</p>
-            </div>
+        <div class="list" id="appsList"></div>
 
-            <span class="badge badge-applied">Applied</span>
-          </div>
-
-          <p class="app-notes">Notes: follow up in 3 days.</p>
-
-          <div class="app-actions">
-            <button class="btn btn-ghost">Edit</button>
-            <button class="btn btn-danger">Delete</button>
-          </div>
-        </article>
-        --></div>
-
-        <p class="empty-state" id="emptyState" hidden>
-          Belum ada data. Tambah lamaran pertama kamu ya ✍️
-        </p>
+        <div
+          class="empty-state"
+          id="emptyState"
+          hidden
+          style="text-align: center; padding: 3rem 1rem"
+        >
+          <img
+            src="./assets/img/empty-box.png"
+            alt="No Data"
+            style="
+              width: 150px;
+              opacity: 0.6;
+              margin-bottom: 1rem;
+              display: block;
+              margin: 0 auto;
+            "
+          />
+          <p style="color: #888; margin-top: 1rem">
+            Belum ada data. Tambah lamaran pertama kamu ya ✍️
+          </p>
+        </div>
       </section>
     </main>
 
-    <!-- FOOTER -->
     <footer class="app-footer">
       <p>Built by Andri • <span id="year"></span></p>
     </footer>
 
-    <!-- nanti kita isi app.js -->
     <script src="./js/app.js"></script>
     <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
   </body>
