@@ -73,48 +73,50 @@
         <div class="section-badge">Selected Works</div>
         <h2>Project</h2>
         <div class="grid">
-          <article class="card">
+          <article class="card" style="padding: 0; overflow: hidden">
             <img
               src="assets/img/job-tracker.jpeg"
               alt="Preview Job Tracker"
               style="
                 width: 100%;
                 height: auto;
-                border-radius: 8px;
-                margin-bottom: 15px;
-                border: 1px solid #eee;
+                display: block; /* Biar gak ada celah di bawah gambar */
+                border-bottom: 1px solid #374151; /* Garis pemisah tipis gelap */
               "
             />
-            <h3>Project 1 | Job Application Tracker</h3>
-            <p>
-              Web app untuk mencatat dan memantau proses lamaran kerja. Ada
-              fitur CRUD, search, filter status, dark/light mode, dan
-              export/import JSON.
-            </p>
 
-            <ul class="pill-list">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-              <li>LocalStorage</li>
-            </ul>
+            <div style="padding: 1.5rem">
+              <h3>Project 1 | Job Application Tracker</h3>
+              <p>
+                Web app untuk mencatat dan memantau proses lamaran kerja. Ada
+                fitur CRUD, search, filter status, dark/light mode, dan
+                export/import JSON.
+              </p>
 
-            <div class="project-links">
-              <a
-                href="projects/job-tracker/index.html"
-                target="_blank"
-                class="project-btn"
-              >
-                Live Demo
-              </a>
+              <ul class="pill-list">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>LocalStorage</li>
+              </ul>
 
-              <a
-                href="https://github.com/andrialvinza/portfolio-andri/tree/main/projects/job-tracker"
-                target="_blank"
-                class="project-btn"
-              >
-                GitHub
-              </a>
+              <div class="project-links">
+                <a
+                  href="projects/job-tracker/index.html"
+                  target="_blank"
+                  class="project-btn"
+                >
+                  Live Demo
+                </a>
+
+                <a
+                  href="https://github.com/andrialvinza/portfolio-andri/tree/main/projects/job-tracker"
+                  target="_blank"
+                  class="project-btn"
+                >
+                  GitHub
+                </a>
+              </div>
             </div>
           </article>
 
